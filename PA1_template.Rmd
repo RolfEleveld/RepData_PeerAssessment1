@@ -3,6 +3,7 @@ title: "Reproducible Research: Peer Assessment 1"
 output: 
 html_document:
 keep_md: true
+Note: run the file with knit2html("PA1_template.Rmd") so all output is conserved.
 ---
 In this research we would like to answer if there is a behavior in steps taken.
 We will look at this from a total number of steps a day, 
