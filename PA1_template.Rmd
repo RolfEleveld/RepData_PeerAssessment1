@@ -21,7 +21,7 @@ collected during the months of October and November, 2012 and include
 the number of steps taken in 5 minute intervals each day.
 
 ### Extract the data file
-The data file activity.csv will be exracted from the zip file if it does not
+The data file activity.csv will be extracted from the zip file if it does not
 already exist. The following code will download the zip file if it did not yet
 exist in the context. If the activity.csv file already exists this will not do
 anything, assuming this is the right version of the file now.
@@ -55,7 +55,7 @@ complete <- steps[complete.cases(steps),]
 
 ## What is mean total number of steps taken per day?
 For this part of the assignment, you can ignore the missing values in
-the dataset.
+the data set.
 
 1. Make a histogram of the total number of steps taken each day
 ```{r histogram total number of steps}
@@ -104,7 +104,7 @@ plot(names(average),
      ylab="average steps across all days")
 ```
 
-2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+2. Which 5-minute interval, on average across all the days in the data set, contains the maximum number of steps?
 5 minute interval that has the largest number of steps
 ```{r maximum average steps timeslot}
 names(average[average == max(average)])
@@ -115,17 +115,17 @@ Note that there are a number of days/intervals where there are missing
 values (coded as `NA`). The presence of missing days may introduce
 bias into some calculations or summaries of the data.
 
-1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with `NA`s)
+1. Calculate and report the total number of missing values in the data set (i.e. the total number of rows with `NA`s)
 Total number of missing values
 ```{r number of rows ith missing values}
 sum(is.na(steps$steps))
 ```
 
-2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+2. Devise a strategy for filling in all of the missing values in the data set. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
 I'd be filling the missing data with **mean** value of the other days for the same time interval.
 
-3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+3. Create a new data set that is equal to the original data set but with the missing data filled in.
 fill missing values with averages
 ```{r filling missing values with mean values}
 filled <- steps
@@ -164,9 +164,9 @@ was to be expected as there are more valid values now.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 For this part the `weekdays()` function may be of some help here. Use
-the dataset with the filled-in missing values for this part.
+the data set with the filled-in missing values for this part.
 
-1. Create a new factor variable in the dataset with two levels -- "weekday" and "weekend"
+1. Create a new factor variable in the data set with two levels -- "weekday" and "weekend"
 indicating whether a given date is a weekday or weekend day.
 ```{r ading a weekpart factor}
 library(lubridate)
@@ -178,7 +178,7 @@ filled$weekpart <-factor(ifelse(weekdays(ymd(filled$date)) == "Saturday" |
 
 1. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
-I had a few issues in teh below with the list type not plotting hence I opted to
+I had a few issues in the below with the list type not plotting hence I opted to
 separate out all weekdays and weekends and then combining them to use
 lattice plot again.
 

@@ -71,7 +71,7 @@ sum_day_steps<-lapply(day_steps,sum) # sum values per day
 hist(as.numeric(sum_day_steps), breaks=16, xlab="total steps a day", main="Total steps taken a day")
 ```
 
-![](PA1_template_files/figure-html/histogram total number of steps-1.png) 
+![](figures/histogram total number of steps-1.png) 
 
 2. Calculate and report the **mean** and **median** total number of steps taken per day
 
@@ -105,7 +105,7 @@ average<-sapply(timeslots,mean) # average out all day values
 plot(names(average), average, type="l", xlab="5 minute time interval", ylab="average steps across all days") #plot the average across all days
 ```
 
-![](PA1_template_files/figure-html/plotting time series-1.png) 
+![](figures/plotting time series-1.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -152,7 +152,7 @@ sum_day_steps_filled<-lapply(day_steps_filled,sum) # sum values per day
 hist(as.numeric(sum_day_steps_filled), breaks=16, xlab="total steps a day", main="Total steps taken a day")
 ```
 
-![](PA1_template_files/figure-html/histogram total number of steps filled-1.png) 
+![](figures/histogram total number of steps filled-1.png) 
 
 
 ```r
@@ -206,4 +206,4 @@ plot(names(filled_weekend_average), filled_weekend_average, type="l", xlab="", y
 plot(names(filled_weekdays_average), filled_weekdays_average, type="l", xlab="", ylab="", main = "weekday") #plot the average weekday
 ```
 
-![](PA1_template_files/figure-html/plot average filled in data by weekend and weekday-1.png) 
+![](figures/plot average filled in data by weekend and weekday-1.png) 
